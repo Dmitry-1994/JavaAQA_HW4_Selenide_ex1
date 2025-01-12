@@ -1,6 +1,7 @@
 package ru.netology.test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.openqa.selenium.Keys;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -25,7 +26,7 @@ public class CardPositiveTest {
     void shouldRegisterAccount(String city, int correctDate, String name, String phone) {
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue(city);
-        $("[data-test-id='date'] input").doubleClick().sendKeys("DELETE");
+        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);
         String setData = getData(correctDate, "dd.MM.yyyy");
         $("[data-test-id='date'] input").setValue(setData);
         $("[data-test-id=name] input").setValue(name);

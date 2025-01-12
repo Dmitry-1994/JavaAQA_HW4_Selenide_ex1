@@ -3,6 +3,7 @@ package ru.netology.test;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.openqa.selenium.Keys;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -28,7 +29,7 @@ public class CardNegativeTest {
     @Test
     void emptyFieldCity() {
         open("http://localhost:9999/");
-        $("[data-test-id='date'] input").doubleClick().sendKeys("DELETE");
+        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);;
         String setData = getData(1, "dd.MM.yyyy");
         $("[data-test-id=date] [type=tel]").setValue(setData);
         $("[data-test-id=name] input").setValue("Дмитрий Тарасов");
@@ -50,7 +51,7 @@ public class CardNegativeTest {
     void invalidCity(String city) {
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue(city);
-        $("[data-test-id='date'] input").doubleClick().sendKeys("DELETE");
+        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);;
         String setData = getData(1, "dd.MM.yyyy");
         $("[data-test-id=date] [type=tel]").setValue(setData);
         $("[data-test-id=name] input").setValue("Дмитрий Тарасов");
@@ -74,7 +75,7 @@ public class CardNegativeTest {
     void incorrectData(String data) {
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Екатеринбург");
-        $("[data-test-id='date'] input").doubleClick().sendKeys("DELETE");
+        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);;
         $("[data-test-id=date] [type=tel]").setValue(data);
         $("[data-test-id=name] input").setValue("Дмитрий Тарасов");
         $("[data-test-id=phone] input").setValue("+79122518775");
@@ -95,7 +96,7 @@ public class CardNegativeTest {
     void invalidData(int data) {
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Екатеринбург");
-        $("[data-test-id='date'] input").doubleClick().sendKeys("DELETE");
+        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);;
         String setData = getData(data, "dd.MM.yyyy");
         $("[data-test-id=date] [type=tel]").setValue(setData);
         $("[data-test-id=name] input").setValue("Дмитрий Тарасов");
@@ -111,7 +112,7 @@ public class CardNegativeTest {
     void emptyFieldName() {
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Екатеринбург");
-        $("[data-test-id='date'] input").doubleClick().sendKeys("DELETE");
+        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);;
         String setData = getData(4, "dd.MM.yyyy");
         $("[data-test-id=date] [type=tel]").setValue(setData);
         $("[data-test-id=phone] input").setValue("+79122518775");
@@ -132,7 +133,7 @@ public class CardNegativeTest {
     void invalidName(String name) {
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Екатеринбург");
-        $("[data-test-id='date'] input").doubleClick().sendKeys("DELETE");
+        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);;
         String setData = getData(4, "dd.MM.yyyy");
         $("[data-test-id=date] [type=tel]").setValue(setData);
         $("[data-test-id=name] input").setValue(name);
@@ -148,7 +149,7 @@ public class CardNegativeTest {
     void emptyFieldPhone() {
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Екатеринбург");
-        $("[data-test-id='date'] input").doubleClick().sendKeys("DELETE");
+        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);;
         String setData = getData(4, "dd.MM.yyyy");
         $("[data-test-id=date] [type=tel]").setValue(setData);
         $("[data-test-id=name] input").setValue("Дмитрий Тарасов");
@@ -172,7 +173,7 @@ public class CardNegativeTest {
     void invalidPhone(String phone) {
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Екатеринбург");
-        $("[data-test-id='date'] input").doubleClick().sendKeys("DELETE");
+        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);;
         String setData = getData(4, "dd.MM.yyyy");
         $("[data-test-id=date] [type=tel]").setValue(setData);
         $("[data-test-id=name] input").setValue("Дмитрий Тарасов");
@@ -188,7 +189,7 @@ public class CardNegativeTest {
     void emptyFieldAgree() {
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Екатеринбург");
-        $("[data-test-id='date'] input").doubleClick().sendKeys("DELETE");
+        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);;
         String setData = getData(4, "dd.MM.yyyy");
         $("[data-test-id=date] [type=tel]").setValue(setData);
         $("[data-test-id=name] input").setValue("Дмитрий Тарасов");
